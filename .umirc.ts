@@ -4,6 +4,14 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  routes: [{ path: '/', component: '@/pages/index' }],
+  routes: [
+    { path: '/', redirect: '/home' },
+    { path: '/home', component: '@/pages/Home' },
+    { path: '/about', component: '@/pages/About' },
+  ],
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+  },
   fastRefresh: {},
 });
